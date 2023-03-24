@@ -6,6 +6,8 @@ services:
       - "8006:80"
     volumes:
       - "cricvol" 
+    networks:
+      - "paynetwork"
     deploy:
       replicas: 3
   web2:
@@ -14,5 +16,9 @@ services:
       - "8007:80"
     volumes:
       - "trainvol"
+    networks:
+      - "paynetwork"
     deploy:
       replicas: 3
+networks:
+   driver: bridge
