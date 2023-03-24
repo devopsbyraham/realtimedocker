@@ -1,0 +1,22 @@
+version: "3"
+services:
+  train:
+    image: paytrain:v1
+    ports:
+      - "8000:80"
+    volumes:
+      - "trainvol"
+
+  movie:
+    image: paymovie:v1
+    ports:
+      - "8001:80"
+    volumes:
+      - "movievol"
+
+  cricket:
+    image: paycric:v1
+    ports:
+      - "8002:80"
+    volumes:
+      - "cricvol"
