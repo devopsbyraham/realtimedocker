@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('gitcheckout') {
+            steps {
+                git 'https://github.com/devopsbyraham/dockerdummy.git'
+            }
+        }
+        stage('services')
+        {
+            steps {
+                sh 'docker stack deploy --compose-file docker-compose.yml paytm'
+            }
+        }
+    }
+}
